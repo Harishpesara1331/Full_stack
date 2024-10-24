@@ -1,0 +1,30 @@
+/* element */
+p {
+    color: red;
+}
+/* universal */
+* {
+    color: blue;
+
+}
+body {
+    background-color: white;
+}
+/* class selector -best practice */
+.myclass {
+    background-color: white;
+
+}
+/* class -best practice */
+.myclass {
+    background-color: green;
+
+}
+/* id selector */
+#myclass {
+    background-color:"red";
+
+}
+
+
+
