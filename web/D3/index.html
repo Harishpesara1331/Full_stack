@@ -7,14 +7,44 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form class="login-form">
-        <input type="text" name="" placeholder="name"/>
-        <input type="email" name="" id="" placeholder="email" required>
-        <input type="password" name="" id="" placeholder="password" required>
+    <form class="login-form" onsubmit="login(event)">
+        <input type="email" name="" class="login-input" id="email" placeholder="email" required>
+        <input type="password" name="" class="login-input" id="password" placeholder="password" required>
         <input type="submit" value="login" class="login-btn">
         </form>
 </body>
 <script>
+    function myfunction() {
+        console.error("Hello man")
+        console.warn("Hello man")
+    }
+    function login(event){
+        event.preventDefault()
+        let email=document.getElementById('email').value;
+        let password=document.getElementById('password').value;
+        console.log("Login : " +email + " " + password);
+        if(password.length<5){
+            alert('password should contact more than 5 letters')
+        }else if(email==="admin@gmail.com"&& password==="123456"){
+            alert('Login success')
+            API()
+        }else{
+            alert("invalid credential !")
+
+        }
+     }
+     async function API(){
+        console.log('called API');
+        try{
+            const response= await fetch('https://671b72732c842d92c37ffdc4.mockapi.io/API/HP');
+            console.log(await response.jso());
+        }catch(error){
+            console.error(error)
+
+        }
+        }
+     
+
     console.log("Hello");
     alert("Hello");
     let x="Hi";
@@ -40,9 +70,18 @@
         isalive:true
 
     }
-    console.log(obj,obj2);
-    let arr=["a",obj,x,obj2]
+    console.log(obj1,obj2);
+    let arr=["a",obj1,x,obj2]
     console.log(arr);
+    let arr2=[1,2,3,4,5,6];
+    let arr3=[arr,arr2];
+    let arr4=[...arr, ...arr2];
+    console.log(arr3);
+    console.log(arr4);
+    function API(){
+
+    }
+    
 </script>
 
 </html>
